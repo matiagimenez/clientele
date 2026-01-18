@@ -41,10 +41,17 @@ The `BaseConfig` class is powered by [pydantic-settings](https://docs.pydantic.d
 - `transport: httpx.BaseTransport | httpx.AsyncBaseTransport | None = None` - custom [transport objects](https://www.python-httpx.org/advanced/transports/) for the underlying client.
 - `cookies: httpx.Cookies | None = None` - the [cookies](https://www.python-httpx.org/quickstart/#cookies) you want to send with http requests.
 - `cache_backend` - the [cache backend](api-cache.md) you want to use when caching results.
+- `http_backend` - the [http backend](api-http-backends.md) you want to use when making HTTP requests.
 
 ## Custom httpx client
 
 You can supply your own `httpx.Client` and `httpx.AsyncClient` if you prefer full control:
+
+!!! warning
+
+    These options are considered deprecated from clientele version 2.0.0 and will not be supported in future versions.
+
+    Use [http backends](api-http-backends.md) instead.
 
 ```python
 
